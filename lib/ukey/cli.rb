@@ -9,7 +9,6 @@ module Ukey
     desc 'watch', 'Watches for USB device - locks screen if removed'
     def watch
       puts 'Watching...'
-      # TODO: load config here and pass to UsbWatcher
       watcher = UsbWatcher.new(device_name: Config.device)
       watcher.watch
     end
