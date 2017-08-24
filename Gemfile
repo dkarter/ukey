@@ -1,4 +1,6 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'libusb', '~> 0.6.3'
-gem 'thor', '~> 0.20.0'
+git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+
+# Specify your gem's dependencies in ukey.gemspec
+gemspec
