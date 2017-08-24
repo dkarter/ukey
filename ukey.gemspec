@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jobs@doriankarter.com"]
 
   spec.summary       = 'Watches for USB devices - when removed locks macOS'
-  spec.description   = 'Watches for USB devices - when removed locks macOS'
+  spec.description   = 'A CLI for detecting a USB device removal and locking macOS'
   spec.homepage      = 'https://doriankarter.com'
   spec.license       = "MIT"
 
