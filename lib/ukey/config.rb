@@ -4,6 +4,9 @@ require 'yaml'
 require 'fileutils'
 
 module Ukey
+  # device not set error class
+  class DeviceNotSetError < StandardError; end
+
   # reads and writes the configuration for ukey
   module Config
     class << self
@@ -18,7 +21,7 @@ module Ukey
       end
 
       def device
-        load_config[:device] || raise('Device not set.')
+        load_config[:device] || raise(DeviceNotSetError)
       end
 
       def interval=(interval)

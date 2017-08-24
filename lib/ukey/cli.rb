@@ -8,11 +8,13 @@ module Ukey
   class CLI < Thor
     desc 'watch', 'Watches for USB device - locks screen if removed'
     def watch
-      puts 'Watching...'
       interval = Config.interval
       device = Config.device
       watcher = UsbWatcher.new(device_name: device, interval: interval)
+      puts 'Watching...'
       watcher.watch
+    rescue DeviceNotSetError
+      say(red('Device not set. Please run "ukey select_device"'))
     end
 
     desc 'select_device [device]', <<~DESC
@@ -53,6 +55,10 @@ module Ukey
 
     def green(msg)
       HighLine.color(msg, :green, :bold)
+    end
+
+    def red(msg)
+      HighLine.color(msg, :red, :bold)
     end
   end
 end
