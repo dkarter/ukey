@@ -5,7 +5,7 @@ require 'libusb'
 module Ukey
   # Watches usb devices and locks screen if removed
   class UsbWatcher
-    def initialize(device_name:, interval: 5)
+    def initialize(device_name: '', interval: 5)
       @device_name = device_name
       @interval = interval
       @usb = LIBUSB::Context.new
