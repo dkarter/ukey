@@ -21,12 +21,16 @@ module Ukey
       choose do |menu|
         menu.prompt = "Select a device (1-#{devices.count}):"
         devices.each do |dev|
-          menu.choice(dev) do
-            Config.device = dev
-            say("#{dev} selected. Config written.")
-          end
+          menu.choice(dev, &method(:device_selected))
         end
       end
+    end
+
+    private
+
+    def device_selected(device)
+      Config.device = device
+      say("#{device} selected. Config written.")
     end
   end
 end
