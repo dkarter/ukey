@@ -21,6 +21,15 @@ module Ukey
         load_config[:device] || raise('Device not set.')
       end
 
+      def interval=(interval)
+        config = load_config.merge(interval: interval.to_i)
+        write_config(config)
+      end
+
+      def interval
+        (load_config[:interval] || 5).to_i
+      end
+
       def write_config(config)
         FileUtils.mkdir_p(config_directory)
         File.open(config_path, 'w') { |f| YAML.dump(config, f) }
