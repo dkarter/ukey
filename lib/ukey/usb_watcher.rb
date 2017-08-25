@@ -13,9 +13,12 @@ module Ukey
 
     def watch
       loop do
-        sleep(interval * 2) if screen_locked?
-        lock_screen if device_removed?
-        sleep(interval)
+        if screen_locked?
+          sleep(interval * 2)
+        else
+          lock_screen if device_removed?
+          sleep(interval)
+        end
       end
     rescue SystemExit, Interrupt, KeyboardInterrupt
       puts "\nWatcher terminated."
