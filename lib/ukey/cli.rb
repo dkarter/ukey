@@ -41,6 +41,11 @@ module Ukey
       interval_selected(interval)
     end
 
+    desc 'version', 'shows the version number'
+    def version
+      say Ukey::VERSION
+    end
+
     private
 
     def device_selected(device)
