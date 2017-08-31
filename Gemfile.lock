@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ukey (0.1.4)
+    ukey (0.1.5)
       highline (~> 1.7)
       libusb (~> 0.6)
       thor (~> 0.20)
