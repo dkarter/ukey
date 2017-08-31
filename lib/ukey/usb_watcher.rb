@@ -20,7 +20,7 @@ module Ukey
           sleep(interval)
         end
       end
-    rescue SystemExit, Interrupt, KeyboardInterrupt
+    rescue SystemExit, Interrupt
       puts "\nWatcher terminated."
     end
 
