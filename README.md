@@ -26,3 +26,14 @@ Then to run the program
 ```bash
 ukey watch
 ```
+
+## Menubar App
+
+ukey works with BitBar - it will show you the status of the ukey watcher and allow you to start and stop the watcher right from your macOS menubar.
+
+### Installation
+
+1. Install the ukey gem globally (instructions above)
+2. Install BitBar from [this fork by @oleander](https://github.com/oleander/bitbar/releases) 
+3. Copy the bitbar/ukey.rb file from the ukey repo into your BitBar "enabled plugins" folder.
+4. Run BitBar
